@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+/* Nell'Uri c'è bisogno di inserire api/ prima di posts */
 Route::get('/posts', 'Api\PostController@index');
 Route::get('/posts/{id}', 'Api\PostController@show');
 Route::delete('/posts/{id}', 'Api\PostController@destroy');

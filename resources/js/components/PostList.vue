@@ -1,5 +1,12 @@
 <template>
     <div class="row">
+        <div class="col-12 text-center">
+            <h1>
+                Gli Ultimi Post
+            </h1>
+        </div>
+
+
         <Post v-for="(post, index) in posts" :key="index" :post="post"/>
 
 
@@ -45,7 +52,7 @@
 </template>
 
 <script>
-    import Post from './Post.vue';
+    import Post from '../components/Post.vue';
     export default {
         name: "PostList",
 

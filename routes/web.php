@@ -24,5 +24,5 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
     Route::resource('categories', 'CategoryController');
 });
 
-Route::get('/{any}', 'Guest\HomeController@index')->where('any','.*');
+Route::get('/', 'Guest\HomeController@index');
 
