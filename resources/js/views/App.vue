@@ -1,7 +1,11 @@
 <template>
     <div class="container-fluid">
-        <Header />
-        <Main />
+        <div class="row">
+            <div class="col-12">
+                <Header />
+                <Main />
+            </div>
+        </div>
     </div>
 </template>
 

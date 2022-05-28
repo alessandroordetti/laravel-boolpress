@@ -13,7 +13,7 @@
                     </li>
 
                     <li class="nav-item active">
-                        <router-link class="nav-link" :to="{name: 'about-us'}" >About-us </router-link>
+                        <router-link class="nav-link" :to="{name: 'about'}" >About the user </router-link>
                     </li>
 
                     <li class="nav-item active">
