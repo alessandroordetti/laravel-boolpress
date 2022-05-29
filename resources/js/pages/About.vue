@@ -7,8 +7,6 @@
             </div>
 
             <div class="col-12">
-                <h3>Vai ai post</h3>
-
                 <router-link class="nav-link" :to="{name: 'posts'}" >Vai ai post </router-link>
             </div>
 

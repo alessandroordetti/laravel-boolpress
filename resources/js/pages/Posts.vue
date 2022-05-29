@@ -9,8 +9,6 @@
         </div>
 
         <div class="col-12">
-            <h3>Vai agli autori</h3>
-
             <router-link class="nav-link" :to="{name: 'about'}" >About the user </router-link>
         </div>
 

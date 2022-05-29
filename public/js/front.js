@@ -1927,6 +1927,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ContactInfo",
   components: {},
@@ -2071,8 +2072,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'About',
@@ -2195,8 +2194,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Post_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Post.vue */ "./resources/js/components/Post.vue");
-//
-//
 //
 //
 //
@@ -3604,8 +3601,15 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col-6 mb-3" }, [
+  return _c("div", { staticClass: "col-3 mb-3" }, [
     _c("div", { staticClass: "card text-center" }, [
+      _c("img", {
+        attrs: {
+          src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWS1xunDTGwK00aZ1wHkS-LvBRsUeue_0EMo7yb909Vov2vksrPvbTz3BQa31c8gdjNVM&usqp=CAU",
+          alt: "",
+        },
+      }),
+      _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
         _c("div", { staticClass: "card-title" }, [
           _vm._v(
@@ -3889,8 +3893,6 @@ var render = function () {
           "div",
           { staticClass: "col-12" },
           [
-            _c("h3", [_vm._v("Vai ai post")]),
-            _vm._v(" "),
             _c(
               "router-link",
               { staticClass: "nav-link", attrs: { to: { name: "posts" } } },
@@ -4054,8 +4056,6 @@ var render = function () {
         "div",
         { staticClass: "col-12" },
         [
-          _c("h3", [_vm._v("Vai agli autori")]),
-          _vm._v(" "),
           _c(
             "router-link",
             { staticClass: "nav-link", attrs: { to: { name: "about" } } },
