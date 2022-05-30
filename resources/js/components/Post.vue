@@ -1,7 +1,7 @@
 <template>
-    <div class="col-4">
+    <div class="col-3">
         <div class="card text-center">
-            <img :src="post.image" :alt="'image of' + post.title">
+            <img :src="post.image" :alt="'image of' + post.title" class="m-auto">
             <div class="card-body">
                 <div class="card-title">
                     {{post.title}}
