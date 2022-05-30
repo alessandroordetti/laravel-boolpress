@@ -1930,7 +1930,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ContactInfo",
+  data: function data() {
+    return {
+      profileImages: ['https://pickaface.net/gallery/avatar/unr_mulherbrancaviada_191123_2122_zdcqf.png', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZldEPvFgz5ysckNAa5ztdf4Exw00bb1a9qA&usqp=CAU', 'https://static.vecteezy.com/ti/vettori-gratis/p3/2275818-avatar-donna-icona-profilo-donna-per-rete-vettoriale.jpg']
+    };
+  },
   components: {},
+  methods: {
+    getImage: function getImage() {
+      return this.profileImages[Math.floor(Math.random() * this.profileImages.length)];
+    }
+  },
   props: ['post']
 });
 
@@ -3603,12 +3613,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "col-3 mb-3" }, [
     _c("div", { staticClass: "card text-center" }, [
-      _c("img", {
-        attrs: {
-          src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWS1xunDTGwK00aZ1wHkS-LvBRsUeue_0EMo7yb909Vov2vksrPvbTz3BQa31c8gdjNVM&usqp=CAU",
-          alt: "",
-        },
-      }),
+      _c("img", { attrs: { src: _vm.getImage() } }),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
         _c("div", { staticClass: "card-title" }, [
@@ -4073,7 +4078,7 @@ var render = function () {
         })
       }),
       _vm._v(" "),
-      _c("nav", { attrs: { "aria-label": "Page navigation " } }, [
+      _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
         _c("ul", { staticClass: "pagination" }, [
           _vm.pagination.currenPage > 1
             ? _c(
@@ -4082,7 +4087,7 @@ var render = function () {
                   staticClass: "page-item",
                   on: {
                     click: function ($event) {
-                      _vm.pagination.currenPage - 1
+                      return _vm.getPosts(_vm.pagination.currenPage - 1)
                     },
                   },
                 },
@@ -4103,7 +4108,7 @@ var render = function () {
                   staticClass: "page-item",
                   on: {
                     click: function ($event) {
-                      _vm.pagination.currenPage + 1
+                      return _vm.getPosts(_vm.pagination.currenPage + 1)
                     },
                   },
                 },
