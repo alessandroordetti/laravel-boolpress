@@ -19,6 +19,11 @@
                 <p>
                     {{$post->description}}
                 </p>
+
+                <h5>Il post appartiene a:</h5>
+                @foreach ($post->categories as $category)
+                    <span>{{$category->name}}</span>
+                @endforeach
             </div>
         </div>
     </div>

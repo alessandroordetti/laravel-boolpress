@@ -26,3 +26,8 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
 
 Route::get('/', 'Guest\HomeController@index');
 
+Route::get('/contacts', 'Guest\ContactController@contact')->name('guest.contact');
+Route::post('/contacts', 'Guest\ContactController@contactMailSender')->name('guest.contactStore');
+
+
+
