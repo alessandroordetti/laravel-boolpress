@@ -9,7 +9,11 @@
                 </h2>
 
                 <div class="mb-3">
-                    <img src="{{$post->image}}" alt="">
+                    @if(str_starts_with($post->image, 'https://') || str_starts_with($post->image, 'http://'))
+                        <img src="{{ $post->image }}" alt="image of {{$post->title}}">
+                    @else
+                        <img src="{{ asset('/storage') . '/' . $post->image }}" alt="image of {{$post->title}}">
+                    @endif
                 </div>
 
                 <p>

@@ -12,6 +12,10 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\Storage;
+
+use Illuminate\Support\Str;
+
 class PostController extends Controller
 {
     /**
@@ -49,7 +53,7 @@ class PostController extends Controller
         $newPost = new Post();
         $newPost->author = $data['author'];
         $newPost->title = $data['title'];
-        $newPost->image = $data['image'];
+        $newPost->image = Storage::put('uploads', $data['uploadedImage']);
         $newPost->description = $data['description'];
         $newPost->date = $data['date'];
         $newPost->save();

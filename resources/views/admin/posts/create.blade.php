@@ -36,8 +36,8 @@
                     </div>
                 @enderror
                 <br>
-                <label for="content">Image</label>
-                <input type="file" name="image" id="image">
+                <label for="uploadedImage">Image</label>
+                <input type="file" name="uploadedImage" id="uploadedImage">
                 @error('name')
                     <div class="alert">
                         {{$message}}
