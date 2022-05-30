@@ -94,7 +94,7 @@ class PostController extends Controller
         $data = $request->all();
         
         $post->author = $data['author'];
-        $post->categories()->sync($data['categories']);
+        $post->categories()->sync($data['category']);
         $post->title = $data['title'];
         $post->image = $data['image'];
         $post->description = $data['description'];
