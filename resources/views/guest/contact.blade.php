@@ -16,12 +16,12 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="guestEmail">Inserisci la tua email</label>
+                        <label for="guestEmail">Inserisci la email del destinatario</label>
                         <input type="email" name="guestEmail">
                     </div>
                     
                     <div>
-                        <label for="emailMessage">Scrivi la mail</label>
+                        <label for="emailMessage">Scrivi il testo della mail</label>
                         <input type="text" name="mailSent" class="mb-3 ">
                     </div>
 

@@ -11,14 +11,20 @@ class SendNewMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    protected $author;
+    protected $sender;
+    protected $guestMessage;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($author, $sender, $guestMessage)
     {
-        //
+        $this->author = $author;
+        $this->sender = $sender;
+        $this->guestMessage = $guestMessage;
     }
 
     /**
@@ -28,6 +34,6 @@ class SendNewMail extends Mailable
      */
     public function build()
     {
-        return $this->view('email.body');
+        return $this->replyTo($this->author)->view('email.body', ["author" => $this->author, "sender" => $this->sender, "guestMessage" => $this->guestMessage]);
     }
 }

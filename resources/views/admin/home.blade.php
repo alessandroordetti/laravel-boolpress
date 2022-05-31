@@ -20,7 +20,7 @@
         </div>
 
         <div class="col-12">
-            <a class="btn btn-success" href="{{route('guest.contact')}}">Invia Mail</a>
+            <a class="btn btn-success" href="{{route('guest.contact')}}">Invia una nuova Mail</a>
         </div>
     </div>
 </div>

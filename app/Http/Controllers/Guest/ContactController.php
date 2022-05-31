@@ -14,9 +14,9 @@ class ContactController extends Controller
     }
 
     public function contactMailSender(Request $request) {
-       /*  dd($request->all()); */
+        /* dd($request->all()); */ 
 
-        Mail::to('account@mail.it')->send(new SendNewMail());
+        Mail::to('account@mail.it')->send(new SendNewMail($request->guestName, $request->guestEmail, $request->mailSent));
         return redirect('admin')->with('message', 'Mail inviata correttamenre'); 
     }
 

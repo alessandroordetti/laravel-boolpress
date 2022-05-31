@@ -7,7 +7,8 @@
     <title>Body della mail</title>
 </head>
 <body>
-    <h1>Risposta automatica dalla mail</h1>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates sunt deleniti rerum perferendis! Similique quam doloribus velit consequatur est voluptate temporibus dicta, maiores sed. Eveniet ipsum dolore explicabo quod modi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod sint et quam cumque laboriosam id. Molestias quia ipsa, voluptates ducimus quisquam quod ea eos fugit error labore id eius debitis.</p>
+    <h1>{{$author}} ti ha scritto dal tuo blog</h1>
+    <h1>{{$sender}} scrive:</h1>
+    <p>{{$guestMessage}}</p>
 </body>
 </html>
