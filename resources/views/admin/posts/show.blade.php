@@ -4,6 +4,13 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-12">
+                
+                    @if (session('message'))
+                    <div class="alert alert-success">
+                        {{session('message')}}
+                    </div>
+                    @endif
+
                 <h2 class="mb-3">
                     {{$post->author}}
                 </h2>

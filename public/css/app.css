@@ -12183,6 +12183,10 @@ fieldset:disabled .btn {
      object-fit: contain;
 }
 
+.error-wrapper {
+  margin: auto;
+}
+
 html,
 body {
   background-color: #fff;

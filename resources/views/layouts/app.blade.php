@@ -55,22 +55,24 @@
                                     Posts
                                     </a>
                                 </li>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+
+                                <li class="nav-item">
+                                    <a class="dropdown-item nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                </li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                </div>
-                            </li>
+                                </li>
                         @endguest
                     </ul>
                 </div>
             </div>
         </nav>
+        
         <main class="py-4">
             @yield('content')
         </main>

@@ -18,7 +18,7 @@
             <Post v-for="(post, index) in posts" :key="index" :post="post" class="mb-5"/>
 
             
-            <nav aria-label="Page navigation example">
+<!--             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                     <li class="page-item" v-if= "pagination.currentPage > 1" @click="getPosts(pagination.current_page -1)">
                         <a class="page-link">Previous</a>
@@ -30,7 +30,7 @@
                         <a class="page-link">Next</a>
                     </li>
                 </ul>
-            </nav>
+            </nav> -->
 
         </div>
     </div>

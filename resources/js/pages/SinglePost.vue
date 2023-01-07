@@ -1,12 +1,10 @@
 <template>
-    <div class="col-3">
+    <div class="col-6">
         <div class="card text-center">
             <img :src="post.image" :alt="'image of' + post.title" class="m-auto">
             <div class="card-body">
                 <div class="card-title">
-                    <router-link :to="{name: 'single-post', params: { id: post.id } }">
-                        {{post.title}}
-                    </router-link>
+                    {{post.title}}
                 </div>
                 <div class="card-subtitle">
                     {{post.author}}
@@ -30,8 +28,29 @@ export default {
     components: { 
 
     },
-    
-    props:['post'],
+
+    data: function (){
+        return {
+            post: [],
+        }
+    },
+
+    methods: {
+            getPost(postId) {
+                axios.get(`http://localhost:8000/api/posts/${postId}`)
+                .then((result)=>{
+                    this.post = result;
+                    console.log(this.post);
+                })
+                .catch((error) => {
+                    console.warn(error);
+                });
+            },
+
+        created(){
+            this.getPost(this.$route.params.id);
+        }
+    }
 
 }
 </script>

@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Support\Str;
 
+use App\Exceptions\PostNotFoundException;
+
 class PostController extends Controller
 {
     /**
@@ -48,16 +50,28 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'author' => 'required|min:3',
+            'date' => 'nullable',
+            'description' => 'max:20',
+        ]);
+
         $data = $request->all();
+
+        var_dump($data);
+
         $data['user_id'] = Auth::user()->id;
         $newPost = new Post();
         $newPost->author = $data['author'];
         $newPost->title = $data['title'];
-        $newPost->image = Storage::put('uploads', $data['uploadedImage']);
+        if($request->hasFile('image')) {
+            $pathD = Storage::disk('public')->put('image', $request->file('image'));
+            $pathDemo = asset('storage/' . $pathD);
+            $newPost->image = $pathDemo;
+        }
         $newPost->description = $data['description'];
         $newPost->date = $data['date'];
         $newPost->save();
-
         $newPost->categories()->attach($data['category']);
 
         return redirect()->route('admin.posts.show', $newPost);
@@ -105,7 +119,7 @@ class PostController extends Controller
         $post->date = $data['date'];
         $post->save();
 
-        return redirect()->route('admin.posts.index', $post->id )->with('message', 'Post modificato correttamente');
+        return redirect()->route('admin.posts.show', $post->id )->with('message', 'Post modificato correttamente');
     }
 
     /**
@@ -118,7 +132,7 @@ class PostController extends Controller
     {
         {
             $post->delete();
-            return redirect()->route('admin.posts.index')->with('message', 'Post eliminato') ;
+            return redirect()->route('admin.posts.index')->with('delete-message', 'Post eliminato') ;
         }
     }
 }

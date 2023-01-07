@@ -14,7 +14,7 @@ class CategoryPostTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        $id_users = Category::pluck('id')->toArray();
+        $id_users = Category::pluck('id')->toArray(); /* prendo tutti gli id di categorie e genera un array */
 
         $posts = Post::all();
 

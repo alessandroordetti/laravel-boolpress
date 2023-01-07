@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: 'About.vue',
+    name: 'Contacts',
     
 }
 </script>

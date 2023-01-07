@@ -7,13 +7,32 @@
             <h1>
                 Crea un nuovo post
             </h1>
+
+{{--             <h4>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>
+                                    {{$error}}
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>     
+                @endif
+            </h4> --}}
+{{-- 
+            @if (Session::has('error'))
+                <div class="alert alert-danger">{{ Session::get('error') }}</div>
+            @endif --}}
+
             <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
             
                 <label for="author">Author</label>
                 <input type="text" name="author" id="author">
-                @error('name')
-                    <div class="alert">
+                @error('author')
+                    <div class="alert alert-danger">
                         {{$message}}
                     </div>
                 @enderror
@@ -22,7 +41,7 @@
                     <label for="category">{{$category->name}}</label>
                     <input type="checkbox" name="category[]" id="category" value="{{$category->id}}">
                 @endforeach
-                @error('name')
+                @error('category')
                     <div class="alert">
                         {{$message}}
                     </div>
@@ -30,23 +49,23 @@
                 <br>
                 <label for="content">Title</label>
                 <input type="text" name="title" id="title">
-                @error('name')
+                @error('title')
                     <div class="alert">
                         {{$message}}
                     </div>
                 @enderror
                 <br>
-                <label for="uploadedImage">Image</label>
-                <input type="file" name="uploadedImage" id="uploadedImage">
-                @error('name')
+                <label for="image">Image</label>
+                <input type="file" name="image" id="image">
+                @error('image')
                     <div class="alert">
                         {{$message}}
                     </div>
                 @enderror
                 <br>
                 <label for="content">Description</label>
-                <input type="text" name="description" id="title">
-                @error('name')
+                <input type="text" name="description" id="description">
+                @error('description')
                     <div class="alert">
                         {{$message}}
                     </div>
@@ -54,8 +73,8 @@
                 <br>
                 <label for="content">Date</label>
                 <input type="text" name="date" id="date">
-                @error('name')
-                    <div class="alert">
+                @error('date')
+                    <div class="alert alert-danger">
                         {{$message}}
                     </div>
                 @enderror

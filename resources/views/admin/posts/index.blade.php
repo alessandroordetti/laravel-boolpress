@@ -3,12 +3,13 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            @if (session('message'))
-                    <div>
-                        {{ session('message') }}
+            @if (session('delete-message'))
+                    <div class="aler alert-warning">
+                        {{ session('delete-message') }}
                     </div>
                 @endif
         </div>
+
         <table class="table table-hover">
             <thead>
                 <tr>
